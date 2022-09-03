@@ -25,6 +25,9 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "@ngrx/effects": "^14.3.0",
+    "@ngrx/store": "^14.3.0",
+    "bootstrap": "^5.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -40,6 +43,7 @@
     "@angular/cli": "~14.2.1",
     "@angular/compiler-cli": "^14.0.0",
     "@briebug/jest-schematic": "^4.0.0",
+    "@ngrx/eslint-plugin": "^14.3.0",
     "@types/jest": "^29.0.0",
     "@typescript-eslint/eslint-plugin": "5.29.0",
     "@typescript-eslint/parser": "5.29.0",

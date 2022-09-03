@@ -1,0 +1,21 @@
+{
+  "tags": [
+    {
+      "id": 1,
+      "title": "Tag 1",
+      "alias": "tag-1",
+      "description": "first test tag"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "title": "Test",
+      "alias": "test",
+      "description": "test",
+      "content": "",
+      "question": "",
+      "answer": ""
+    }
+  ]
+}
