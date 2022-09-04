@@ -60,6 +60,7 @@
         "title": "Test",
         "alias": "test",
         "description": "This is a multiple choice question",
+        "content": "The question's content",
         "question": "Choose the right Option!",
         "options": [
           {
@@ -75,7 +76,21 @@
             "text": "Option 3"
           }
         ],
-        "resultOptionIds": [2],
+        "answers": [
+          {
+            "id": 1,
+            "text": "answers 1"
+          },
+          {
+            "id": 2,
+            "text": "answers 2"
+          },
+          {
+            "id": 3,
+            "text": "answers 3"
+          }
+        ],
+        "resultAnswerIds": [2],
         "tags": [1]
       }
     ]

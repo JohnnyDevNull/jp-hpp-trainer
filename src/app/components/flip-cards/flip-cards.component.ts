@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { map, Observable, skip, switchMap, withLatestFrom } from 'rxjs';
-import { DataFacadeService } from '../../data-facade.service';
 import { IFlipCardDataItem } from '../../data.interface';
 import { IResultsCounter } from '../../state/reducers';
+import { FlipCardsFacadeService } from './flip-cards-facade.service';
 
 @Component({
   selector: 'app-flip-cards',
@@ -25,7 +25,7 @@ export class FlipCardsComponent {
   isFlipped = false;
   isResultChosen = false;
 
-  public constructor(public readonly dataFacade: DataFacadeService) {}
+  public constructor(public readonly dataFacade: FlipCardsFacadeService) {}
 
   public onPrev(): void {
     if (this.isResultChosen || !this.isFlipped) {

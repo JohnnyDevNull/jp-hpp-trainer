@@ -1,6 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
 import { IData, IFlipCardDataItem, IMultipleChoiceDataItem } from '../data.interface';
-import { UpdateFlipCardActualIndex, UpdateFlipCardResults } from './actions';
+import {
+  UpdateFlipCardActualIndex,
+  UpdateFlipCardResults,
+  UpdateMultipleChoiceActualIndex,
+  UpdateMultipleChoiceResults,
+} from './actions';
 import * as Actions from './actions';
 
 export interface IResultsCounter {
@@ -85,6 +90,20 @@ const dataReducerInternal = createReducer(
     (state, { payload }): IDataState => ({
       ...state,
       flipCards: { ...state.flipCards, results: payload.results },
+    }),
+  ),
+  on(
+    UpdateMultipleChoiceActualIndex,
+    (state, { payload }): IDataState => ({
+      ...state,
+      multipleChoice: { ...state.multipleChoice, actualIndex: payload.actualIndex },
+    }),
+  ),
+  on(
+    UpdateMultipleChoiceResults,
+    (state, { payload }): IDataState => ({
+      ...state,
+      multipleChoice: { ...state.multipleChoice, results: payload.results },
     }),
   ),
 );

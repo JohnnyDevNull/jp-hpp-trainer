@@ -12,6 +12,12 @@ export interface IFlipCardDataItem {
   alias: string;
   description: string;
   content?: string;
+  tags: number[];
+}
+
+export interface ITextOption {
+  id: number;
+  text: string;
 }
 
 export interface IMultipleChoiceDataItem {
@@ -19,8 +25,12 @@ export interface IMultipleChoiceDataItem {
   title: string;
   alias: string;
   description: string;
-  question: string;
-  resultOptionIds: number[];
+  content?: string;
+  question?: string;
+  options?: ITextOption[];
+  answers?: ITextOption[];
+  resultAnswerIds?: number[];
+  tags: number[];
 }
 
 export interface IData {

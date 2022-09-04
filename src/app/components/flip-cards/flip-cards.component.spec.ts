@@ -1,8 +1,8 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BehaviorSubject, Observable, of, switchMap } from 'rxjs';
-import { DataFacadeService } from '../../data-facade.service';
 import { IFlipCardDataItem } from '../../data.interface';
+import { FlipCardsFacadeService } from './flip-cards-facade.service';
 
 import { FlipCardsComponent } from './flip-cards.component';
 
@@ -10,7 +10,7 @@ const flipCardItemsMock$ = new BehaviorSubject([]);
 const flipCardItemsCount$ = new BehaviorSubject(0);
 const flipCardActualIndex$ = new BehaviorSubject(0);
 
-class DataFacdeServiceMock {
+class FlipCardsFacadeServiceMock {
   flipCardItems$: Observable<IFlipCardDataItem[]> = flipCardItemsMock$.asObservable();
   flipCardItemsCount$: Observable<number> = flipCardItemsCount$.asObservable();
   flipCardActualIndex$: Observable<number> = flipCardActualIndex$.asObservable();
@@ -30,17 +30,17 @@ class DataFacdeServiceMock {
 describe('FlipCardsComponent', () => {
   let component: FlipCardsComponent;
   let fixture: ComponentFixture<FlipCardsComponent>;
-  let service: DataFacadeService;
+  let service: FlipCardsFacadeService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FlipCardsComponent],
-      providers: [{ provide: DataFacadeService, useClass: DataFacdeServiceMock }],
+      providers: [{ provide: FlipCardsFacadeService, useClass: FlipCardsFacadeServiceMock }],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FlipCardsComponent);
-    service = TestBed.inject(DataFacadeService);
+    service = TestBed.inject(FlipCardsFacadeService);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

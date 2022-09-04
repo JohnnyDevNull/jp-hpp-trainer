@@ -14,3 +14,12 @@ export const UpdateFlipCardResults = createAction(
   '[FlipCard State Update] Update Results',
   props<{ payload: { results: { wrongCount: number; rightCount: number } } }>(),
 );
+
+export const UpdateMultipleChoiceActualIndex = createAction(
+  '[MultipleChoice State Update] Update Actual Index',
+  props<{ payload: { actualIndex: number } }>(),
+);
+export const UpdateMultipleChoiceResults = createAction(
+  '[MultipleChoice State Update] Update Results',
+  props<{ payload: { results: { wrongCount: number; rightCount: number } } }>(),
+);
