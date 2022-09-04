@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "jp-flipcards": {
+    "jp-hpp-trainer": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jp-flipcards",
+            "outputPath": "dist/jp-hpp-trainer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -33,13 +33,13 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/scss/main.scss"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "outputPath": "dist/jp-hpp-trainer.prod",
               "budgets": [
                 {
                   "type": "initial",
@@ -61,6 +61,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "outputPath": "dist/jp-hpp-trainer.dev",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -75,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "jp-flipcards:build:production"
+              "browserTarget": "jp-hpp-trainer:build:production"
             },
             "development": {
-              "browserTarget": "jp-flipcards:build:development"
+              "browserTarget": "jp-hpp-trainer:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "jp-flipcards:build"
+            "browserTarget": "jp-hpp-trainer:build"
           }
         },
         "test": {
