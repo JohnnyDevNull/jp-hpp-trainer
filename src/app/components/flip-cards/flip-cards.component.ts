@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { map, Observable, skip, startWith, switchMap, withLatestFrom } from 'rxjs';
+import { map, Observable, skip, switchMap, withLatestFrom } from 'rxjs';
 import { DataFacadeService } from '../../data-facade.service';
 import { IFlipCardDataItem } from '../../data.interface';
 import { IResultsCounter } from '../../state/reducers';
