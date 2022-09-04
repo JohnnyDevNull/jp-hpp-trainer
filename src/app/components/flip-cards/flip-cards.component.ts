@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { map, Observable, skip, switchMap, withLatestFrom } from 'rxjs';
+import { map, Observable, skip, startWith, switchMap, withLatestFrom } from 'rxjs';
 import { DataFacadeService } from '../../data-facade.service';
 import { IFlipCardDataItem } from '../../data.interface';
 import { IResultsCounter } from '../../state/reducers';
@@ -23,28 +23,28 @@ export class FlipCardsComponent {
     map(([actualNumber, itemCount]) => actualNumber >= itemCount),
   );
   isFlipped = false;
-  isResultChoosen = false;
+  isResultChosen = false;
 
   public constructor(public readonly dataFacade: DataFacadeService) {}
 
   public onPrev(): void {
-    if (this.isResultChoosen || !this.isFlipped) {
+    if (this.isResultChosen || !this.isFlipped) {
       this.isFlipped = false;
-      this.isResultChoosen = false;
+      this.isResultChosen = false;
       this.dataFacade.prevFlipCard();
     }
   }
 
   public onNext(): void {
-    if (this.isResultChoosen || !this.isFlipped) {
+    if (this.isResultChosen || !this.isFlipped) {
       this.isFlipped = false;
-      this.isResultChoosen = false;
+      this.isResultChosen = false;
       this.dataFacade.nextFlipCard();
     }
   }
 
   public onResult(isTrue: boolean): void {
-    this.isResultChoosen = true;
+    this.isResultChosen = true;
     isTrue ? this.dataFacade.incFlipCardRightCount() : this.dataFacade.incFlipCardWrongCount();
   }
 }
