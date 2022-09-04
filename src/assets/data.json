@@ -5,17 +5,79 @@
       "title": "Tag 1",
       "alias": "tag-1",
       "description": "first test tag"
-    }
-  ],
-  "items": [
+    },
     {
       "id": 1,
-      "title": "Test",
-      "alias": "test",
-      "description": "test",
-      "content": "",
-      "question": "",
-      "answer": ""
+      "title": "Tag 2",
+      "alias": "tag-2",
+      "description": "second test tag"
     }
-  ]
+  ],
+  "flipCards": {
+    "items": [
+      {
+        "id": 1,
+        "title": "Agitiertheit (Agitation)",
+        "alias": "agitation",
+        "source": {
+          "title": "flexikon.doccheck.com/de/Agitiertheit",
+          "link": "https://flexikon.doccheck.com/de/Agitiertheit"
+        },
+        "description": "Als Agitiertheit oder Agitation bezeichnet man die pathologisch gesteigerte, unproduktive motorische Aktivität eines Patienten. Die Abgrenzung gegenüber dem Begriff \"Rastlosigkeit\" ist nicht scharf. Die Begriffe werden häufig synonym verwendet.",
+        "content": "Agitiertheit drückt sich als übermäßige motorische Aktivität (Hyperaktivität) mit hastigen, fahrigen und ziellosen Bewegungen aus. Sie ist oft mit einem Gefühl innerer Anspannung und Unruhe verbunden. Typische Verhaltensweisen sind unruhiges Hin- und Herlaufen, Zappeln, Zerren an der eigenen Kleidung und die Unfähigkeit, still zu sitzen.",
+        "tags": [2]
+      },
+      {
+        "id": 2,
+        "title": "Autoaggression",
+        "alias": "autoaggression",
+        "source": {
+          "title": "flexikon.doccheck.com/de/Autoaggression",
+          "link": "https://flexikon.doccheck.com/de/Autoaggression"
+        },
+        "description": "Unter Autoaggression versteht man eine destruktive Aktivität, die ein Organismus gegen sich selbst richtet. Autoaggression kann sich auf zellulärer (Autoimmunerkrankung) oder psychischer Ebene (Selbstverletzendes Verhalten) abspielen.",
+        "content": null,
+        "tags": [1]
+      },
+      {
+        "id": 3,
+        "title": "Mutismus",
+        "alias": "mutismus",
+        "source": {
+          "title": "flexikon.doccheck.com/de/Mutismus",
+          "link": "https://flexikon.doccheck.com/de/Mutismus"
+        },
+        "description": "Als Mutismus bezeichnet man das psychisch bedingte Schweigen eines Menschen, ohne dass ein Defekt des Sprachzentrums oder der Sprachorgane vorliegt. Der Betroffene kann Sprechen und versteht, wenn andere mit ihm sprechen. Mutismus kommt unter anderem bei Depressionen und anderen psychiatrischen Erkrankungen vor.",
+        "content": null,
+        "tags": [2]
+      }
+    ]
+  },
+  "multipleChoice": {
+    "items": [
+      {
+        "id": 1,
+        "title": "Test",
+        "alias": "test",
+        "description": "This is a multiple choice question",
+        "question": "Choose the right Option!",
+        "options": [
+          {
+            "id": 1,
+            "text": "Option 1"
+          },
+          {
+            "id": 2,
+            "text": "Option 2"
+          },
+          {
+            "id": 3,
+            "text": "Option 3"
+          }
+        ],
+        "resultOptionIds": [2],
+        "tags": [1]
+      }
+    ]
+  }
 }

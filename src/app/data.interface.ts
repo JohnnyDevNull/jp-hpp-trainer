@@ -1,21 +1,34 @@
 export interface IDataTag {
-  id: number,
+  id: number;
   title: string;
   alias: string;
   description: string;
 }
 
-export interface IDataItem {
-  id: number,
-  title: string,
-  alias: string,
-  description: string,
-  content: string,
-  question: string,
-  answer: string
+export interface IFlipCardDataItem {
+  id: number;
+  title: string;
+  source: { title: string; link: string };
+  alias: string;
+  description: string;
+  content?: string;
+}
+
+export interface IMultipleChoiceDataItem {
+  id: number;
+  title: string;
+  alias: string;
+  description: string;
+  question: string;
+  resultOptionIds: number[];
 }
 
 export interface IData {
   tags: IDataTag[];
-  items: IDataItem[]
+  flipCards: {
+    items: IFlipCardDataItem[];
+  };
+  multipleChoice: {
+    items: IMultipleChoiceDataItem[];
+  };
 }

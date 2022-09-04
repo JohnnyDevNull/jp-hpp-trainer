@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FlipCardsComponent } from './components/flip-cards/flip-cards.component';
+import { MultipleChoiceComponent } from './components/multiple-choice/multiple-choice.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'flip-cards' },
+  { path: 'flip-cards', component: FlipCardsComponent },
+  { path: 'multiple-choice', component: MultipleChoiceComponent },
+  { path: '**', redirectTo: 'flip-cards' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

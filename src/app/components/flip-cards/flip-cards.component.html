@@ -1,0 +1,37 @@
+<div class="d-flex h-100 justify-content-center align-items-center flex-column">
+  <div style="height: 400px;">
+    <mat-card *ngIf="item$ | async as item" style="width: 500px; min-height: 200px; max-height: 400px;">
+      <mat-card-title class="text-center">{{ item.title }}</mat-card-title>
+      <ng-container *ngIf="isFlipped">
+        <mat-card-subtitle class="text-center" *ngIf="item.source">
+          <a href="{{item.source.link}}" target="_blank" rel="noopener">{{ item.source.title }}</a>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <p>{{ item.description }}</p>
+          <p *ngIf="item.content">{{ item.content }}</p>
+        </mat-card-content>
+      </ng-container>
+    </mat-card>
+  </div>
+  <div class="my-1" style="height: 56px;">
+    <ng-container *ngIf="isFlipped && !isResultChoosen">
+      Na wusstest du die Anwort?<br>
+      <button mat-raised-button color="accent" class="mx-3" (click)="onResult(true)">Ja</button>
+      <button mat-raised-button color="accent" (click)="onResult(false)">Nein</button>
+    </ng-container>
+  </div>
+  <div class="my-1">
+    {{ (actualCardNumber$ | async) }} von {{ itemCount$ | async }}
+  </div>
+  <div class="my-1 d-flex justify-content-between" style="width: 500px;">
+    <button mat-flat-button color="primary" [disabled]="isPrevButtonDisabled$ | async" (click)="onPrev()">Zurück</button>
+    <button mat-flat-button color="primary" [disabled]="isFlipped" (click)="isFlipped = !isFlipped">Flip</button>
+    <button mat-flat-button color="primary" [disabled]="isNextButtonDisabled$ | async" (click)="onNext()">Weiter</button>
+  </div>
+  <div class="my-1" *ngIf="results$ | async as results">
+    <div class="pt-3 pe-3">
+    <mat-icon fontIcon="check" matBadge="{{ results.rightCount }}"></mat-icon>&nbsp;&nbsp;&nbsp;
+    <mat-icon fontIcon="close" matBadge="{{ results.wrongCount }}" matBadgeColor="warn"></mat-icon>
+    </div>
+  </div>
+</div>

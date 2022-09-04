@@ -6,7 +6,7 @@ import { DataFacadeService } from './data-facade.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements AfterViewInit {
-  public constructor(private readonly dataFacade: DataFacadeService) {}
+  public constructor(public readonly dataFacade: DataFacadeService) {}
 
   ngAfterViewInit() {
     this.dataFacade.load();
