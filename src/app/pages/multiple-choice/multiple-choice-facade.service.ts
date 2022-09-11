@@ -2,12 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, of, switchMap, take } from 'rxjs';
 import { IMultipleChoiceDataItem } from '../../data.interface';
-import {
-  LoadData,
-  ReLoadData,
-  UpdateMultipleChoiceActualIndex,
-  UpdateMultipleChoiceResults,
-} from '../../state/actions';
+import { UpdateMultipleChoiceActualIndex, UpdateMultipleChoiceResults } from '../../state/actions';
 import { IAppState, IResultsCounter } from '../../state/reducers';
 import {
   selectMultipleChoiceActualIndex,
@@ -28,10 +23,6 @@ export class MultipleChoiceFacadeService {
     this.multipleChoiceItemsCount$ = this.store.select(selectMultipleChoiceItemsCount);
     this.multipleChoiceActualIndex$ = this.store.select(selectMultipleChoiceActualIndex);
     this.multipleChoiceResults$ = this.store.select(selectMultipleChoiceResults);
-  }
-
-  public load(reload = false) {
-    this.store.dispatch(reload ? ReLoadData() : LoadData());
   }
 
   public getMultipleChoiceByIndex(index: number) {

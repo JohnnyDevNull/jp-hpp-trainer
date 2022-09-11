@@ -2,18 +2,20 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BehaviorSubject, Observable, of, switchMap } from 'rxjs';
 import { IFlipCardDataItem } from '../../data.interface';
+import { IResultsCounter } from '../../state/reducers';
 import { FlipCardsFacadeService } from './flip-cards-facade.service';
-
 import { FlipCardsComponent } from './flip-cards.component';
 
-const flipCardItemsMock$ = new BehaviorSubject([]);
-const flipCardItemsCount$ = new BehaviorSubject(0);
-const flipCardActualIndex$ = new BehaviorSubject(0);
+const flipCardItemsMock$ = new BehaviorSubject<IFlipCardDataItem[]>([]);
+const flipCardItemsCount$ = new BehaviorSubject<number>(0);
+const flipCardActualIndex$ = new BehaviorSubject<number>(0);
+const flipCardResults$ = new BehaviorSubject<IResultsCounter>({ rightCount: 0, wrongCount: 0 });
 
 class FlipCardsFacadeServiceMock {
   flipCardItems$: Observable<IFlipCardDataItem[]> = flipCardItemsMock$.asObservable();
   flipCardItemsCount$: Observable<number> = flipCardItemsCount$.asObservable();
   flipCardActualIndex$: Observable<number> = flipCardActualIndex$.asObservable();
+  flipCardResults$: Observable<IResultsCounter> = flipCardResults$.asObservable();
   getFlipCardByIndex(index: number) {
     return this.flipCardItems$.pipe(switchMap(items => of(items[index] || null)));
   }
