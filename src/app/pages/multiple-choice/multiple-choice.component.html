@@ -1,0 +1,27 @@
+<div class="d-flex h-100 justify-content-center align-items-center flex-column">
+  <div class="multiple-choice-container">
+    <mat-card *ngIf="item$ | async as item" class="multiple-choice-card">
+      <mat-card-title class="text-center">{{ item.title }}</mat-card-title>
+      <ng-container *ngIf="isFlipped">
+        <mat-card-content>
+          <p>{{ item.description }}</p>
+          <p *ngIf="item.content">{{ item.content }}</p>
+          <div class="multiple-choice-options">
+            <ol *ngIf="item.options">
+              <li *ngFor="let option of item.options">
+                {{ option.text }}
+              </li>
+            </ol>
+          </div>
+          <div class="multiple-choice-answers">
+            <ol type="A" *ngIf="item.answers">
+              <li *ngFor="let answer of item.answers">
+                {{ answer.text }}
+              </li>
+            </ol>
+          </div>
+        </mat-card-content>
+      </ng-container>
+    </mat-card>
+  </div>
+</div>

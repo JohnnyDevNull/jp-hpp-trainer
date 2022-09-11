@@ -1,0 +1,13 @@
+.multiple-choice-container {
+  height: 400px;
+
+  mat-card-content {
+    @extend .p-3;
+  }
+
+  .multiple-choice-card {
+    width: 500px;
+    min-height: 200px;
+    max-height: 400px;
+  }
+}

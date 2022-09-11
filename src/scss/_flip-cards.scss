@@ -1,0 +1,13 @@
+.flip-card-container {
+  height: 400px;
+
+  mat-card-content {
+    @extend .p-3;
+  }
+
+  .flip-card {
+    width: 500px;
+    min-height: 200px;
+    max-height: 400px;
+  }
+}

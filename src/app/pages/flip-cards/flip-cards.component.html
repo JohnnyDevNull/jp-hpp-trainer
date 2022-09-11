@@ -1,6 +1,6 @@
 <div class="d-flex h-100 justify-content-center align-items-center flex-column">
-  <div style="height: 400px;">
-    <mat-card *ngIf="item$ | async as item" style="width: 500px; min-height: 200px; max-height: 400px;">
+  <div class="flip-card-container">
+    <mat-card *ngIf="item$ | async as item" class="flip-card">
       <mat-card-title class="text-center">{{ item.title }}</mat-card-title>
       <ng-container *ngIf="isFlipped">
         <mat-card-subtitle class="text-center" *ngIf="item.source">

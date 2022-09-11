@@ -34,7 +34,7 @@ export class MultipleChoiceFacadeService {
     this.store.dispatch(reload ? ReLoadData() : LoadData());
   }
 
-  public getMultipleChoiceIndex(index: number) {
+  public getMultipleChoiceByIndex(index: number) {
     return this.multipleChoiceItems$.pipe(switchMap(items => of(items[index] || null)));
   }
 

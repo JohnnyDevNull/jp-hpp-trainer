@@ -13,8 +13,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FlipCardsComponent } from './components/flip-cards/flip-cards.component';
-import { MultipleChoiceComponent } from './components/multiple-choice/multiple-choice.component';
+import { FlipCardsComponent } from './pages/flip-cards/flip-cards.component';
+import { MultipleChoiceComponent } from './pages/multiple-choice/multiple-choice.component';
 import { AppEffects } from './state/effects';
 import { appReducers } from './state/reducers';
 

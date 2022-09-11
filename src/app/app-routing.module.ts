@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FlipCardsComponent } from './components/flip-cards/flip-cards.component';
-import { MultipleChoiceComponent } from './components/multiple-choice/multiple-choice.component';
+import { FlipCardsComponent } from './pages/flip-cards/flip-cards.component';
+import { MultipleChoiceComponent } from './pages/multiple-choice/multiple-choice.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'flip-cards' },
